@@ -1,0 +1,26 @@
+{
+  "name": "nbank",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nbanksolo/Nbank.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nbanksolo/Nbank/issues"
+  },
+  "homepage": "https://github.com/Nbanksolo/Nbank#readme",
+  "devDependencies": {
+    "hardhat": "^2.9.3"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.6.0"
+  }
+}
