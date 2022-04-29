@@ -17,13 +17,13 @@ contract NBank{
     uint amount;
 
     mapping(address => bool) public allowToken;
-    mapping(address => string) public bankName;
     
     event DepositToken(address to , uint indexed month ,uint indexed value);
     event Withdrawa(address indexed to,uint indexed tokenId);
 
     constructor(address _manager) {
         manager = _manager;
+
     }
 
     modifier onlyAdmin(){
