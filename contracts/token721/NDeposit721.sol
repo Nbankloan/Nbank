@@ -19,6 +19,7 @@ import "../library/TokenSet.sol";
             uint expireTime;
             uint amount;
     }
+        mapping(address => bool) public allowMint;
     
     constructor()  {
         manger = msg.sender;
@@ -37,8 +38,8 @@ import "../library/TokenSet.sol";
     event Approval(address indexed owner, address indexed approved, uint256 indexed tokenId);
     event ApprovalForAll(address indexed owner, address indexed operator, bool approved);
 
-    function initialize(address _creator) external  {
-        creator =_creator;
+    function _allowMint(address nbank) public onlyAdmin {
+        allowMint[nbank] = !allowMint[nbank];
     }
 
     address public creator;
@@ -54,7 +55,8 @@ import "../library/TokenSet.sol";
     /*
     * Issue additional tokens, restricting only banks from issuing additional tokens (_isBank) to obtain credentials.
     */
-    function mint(address to,  uint amounts, uint month , string memory name_) onlycreator external  returns(uint) {
+    function mint(address to,  uint amounts, uint month , string memory name_)  external  returns(uint) {
+        require(allowMint[msg.sender] == true, "not allow");
         //The time of the current block, within the unit32 range
         uint32 blockTime = uint32(block.timestamp % 2 ** 32);
         //A new token is issued, and the address orders the number of cards to be plus 1
@@ -76,7 +78,8 @@ import "../library/TokenSet.sol";
     }
  
 
-    function burn(uint256 tokenId) onlycreator external  virtual {
+    function burn(uint256 tokenId)  onlycreator external  virtual {
+        
         address owner = ownerOf(tokenId);
         userToken[owner].remove(tokenId);
         delete list[tokenId-1];
