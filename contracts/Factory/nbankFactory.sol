@@ -11,6 +11,7 @@ contract nbankFactory is Ownable{
 
     mapping(address => string) public bankName;
     mapping(address => uint) public userBank;
+    mapping(address => uint) public createBankTime;
 
     constructor()  {
 
@@ -23,6 +24,7 @@ contract nbankFactory is Ownable{
         newBank = bank;
         bankName[bank] = _bankName;
         userBank[manager] = 1;
+        createBankTime[manager] = block.timestamp;
         return bank;
     }
 
