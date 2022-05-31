@@ -23,10 +23,10 @@ NBank is an ERC20 token bank that produces NFTs in batch while providing composa
 
 9.Anyone can purchase the NFT in circulation through the transfer market, and obtain the token contained in the NFT. After the bank lock-up expires, the token can be withdrawn from the bank through the NFT lock-up token.
 
-## BNB test smart chain contract address
-- erc20Factory 0x508a8068Afb86AD772927917a62bc13787cbaF8C
-- loanMarket 0x299cc9cB5151c3B2bD5826CeF8F98b4151267465
-- NBank 0xee3b12acA7eCc34f900024e86B2b9a42d63AB329
-- nbankFactory 0x1Aa203ee0C15b836E88BFe7c79BC209dA65E3202
-- NBT 0x5D0577Fc873f6c82f57c4e177fe57B26cde6FC6e
-- NDeposit721 0x5cA32386F3EB0aC1806De335d53f365ec252770F    
+## Harmoy Testnet Shard 0 contract address
+- erc20Factory 0x56a7f24f7Ed2A8cA3B5FF54AF46c943A37a8bf50
+- loanMarket 0xEb14FA64Ab89359a49fA5971e20C99b2703C9510
+- NBank 0xB103544C3A66E92b5328eE51f587618a4c8b3104
+- nbankFactory 0x57Cf2A0dB9D21aF9E49797c9FA68162014d52299
+- NBT 0xA361dA24Db408088ee13050630E8A3cE239c07B7
+- NDeposit721 0x1c3D82f7983fE1AAC11C11cEEf735735Fc0e0C5d    
