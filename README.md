@@ -1,4 +1,4 @@
-![image](https://raw.githubusercontent.com/Nbanksolo/Nbank/main/images/NBank.jpg)
+![image](https://raw.githubusercontent.com/Nbanksolo/Nbank-front-end/main/Pictures/NBank.jpg)
 ## Overview
 
 NBank is an ERC20 token bank that produces NFTs in batch while providing composable deposit certificates.
