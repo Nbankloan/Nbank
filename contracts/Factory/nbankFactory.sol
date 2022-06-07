@@ -17,7 +17,7 @@ contract nbankFactory is Ownable{
 
     }
 
-    
+    //Create your own bank
     function creatBank(address manager,string memory _bankName) public returns(address){
         require(userBank[manager] != 1, "you has created!");
         address bank = address(new NBank(manager));
@@ -27,10 +27,11 @@ contract nbankFactory is Ownable{
         createBankTime[manager] = block.timestamp;
         return bank;
     }
-
+    //Blacklisted addresses cannot create their own bank
     function addBlackList(address User) public onlyOwner(){
        userBank[User] = 1;
    }
+   //remove address from blacklist
     function removeBlackList(address User) public onlyOwner(){
         userBank[User] = 0;
     }
