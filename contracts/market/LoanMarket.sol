@@ -5,7 +5,7 @@ import "../interface/token721/INDeposit721.sol";
 import "../library/TransferHelper.sol";
 
 contract LoanMarket {
-
+    //loan structure
     struct LoanRecording{
         uint tokenId;
         uint id;
@@ -89,7 +89,11 @@ contract LoanMarket {
         emit RepealMortgage(id);
     }
 
-
+    /**
+        * @notice Borrowing requires nft's id and loan amount
+        * @param id holder's nft id
+        * @param value holder's entrusted loan amount
+    */
     function lend(uint id,uint value)public{
         require(list[id-1].money==value,'Incorrect bid');
         TransferHelper.safeTransferFrom(token,msg.sender,list[id-1].owner,value);
@@ -101,7 +105,11 @@ contract LoanMarket {
         tokenLength = list.length;
     }
 
-
+      /**
+        * @notice liquidation mechanism
+        * @param id holder's nft id
+        * @param value holder's amount to be liquidated
+    */
     function repayment(uint id,uint value) public {
         require(value != 0 , "value error");
         require(msg.sender != address(0),"not 0 address");
