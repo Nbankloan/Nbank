@@ -61,4 +61,8 @@ contract NBank{
         reserve =balance ;       
         emit Withdrawa(to,tokenId);
     }
+
+    function changeManager(address to) public onlyAdmin {
+        manager = to;
+    }
 }

@@ -25,6 +25,7 @@ import "../library/TokenSet.sol";
         manger = msg.sender;
 
     }
+    //Set the method called by the administrator
     modifier onlyAdmin(){
         require(msg.sender == manger , "u are not manger");
         _;
@@ -37,7 +38,8 @@ import "../library/TokenSet.sol";
     event Transfer(address indexed from, address indexed to, uint256 indexed tokenId);
     event Approval(address indexed owner, address indexed approved, uint256 indexed tokenId);
     event ApprovalForAll(address indexed owner, address indexed operator, bool approved);
-
+    
+    //Add a bank address that allows additional issuance
     function _allowMint(address nbank) public onlyAdmin {
         allowMint[nbank] = !allowMint[nbank];
     }
